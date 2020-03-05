@@ -30,7 +30,7 @@ def recv():
             break
 
 
-def sendmsg(msg, sleep = 6):
+def sendmsg(msg, sleep = 4):
     print("Sending: " + msg)
     msg = msg.encode(encoding="utf-8")
     sock.sendto(msg, tello_address)
@@ -49,7 +49,11 @@ def square():
         sendmsg('forward 100') #Drone will go forward 100cm
         sendmsg('ccw90') #Drone will turn Counter Clockwise 90 degrees
 
-
+# Triangle
+def triangle():
+    for i in range(3):
+        sendmsg('forward 12')
+        sendmsg('ccw 120')
 print("\nDaniel Clark")
 print("Program Name: Tello Training Lab - Square Function")
 print("Date: 3.4.20")
